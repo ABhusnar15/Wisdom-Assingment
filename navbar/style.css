@@ -1,0 +1,157 @@
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f3f2ef;
+}
+
+/* Navbar */
+.navbar {
+    height: 60px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8%;
+    gap: 10px;
+    box-shadow: 0 1px 4px #ccc;
+}
+
+/* Logo */
+.logo {
+    background-color: #0a66c2;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Search */
+.search input {
+    width: 250px;
+    padding: 12px;
+    background-color: #edf3f8;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    height: 100%;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    font-size: 12px;
+    min-width: 75px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 0 8px;
+}
+
+.nav-links a:hover {
+    color: black;
+}
+
+/* Icons */
+.icon {
+    font-size: 23px;
+}
+
+/* Active Home */
+.nav-links .active {
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+/* Profile */
+.profile {
+    width: 25px;
+    height: 25px;
+    background-color: #0a66c2;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Premium */
+.nav-links .premium {
+    color: #915907;
+    text-decoration: underline;
+    text-align: center;
+    min-width: 100px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+    .navbar {
+        padding: 0 15px;
+    }
+
+    .search input {
+        width: 150px;
+    }
+
+    .nav-links a {
+        min-width: 60px;
+        padding: 0 4px;
+    }
+
+    .nav-links .premium {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
+    }
+
+    .search input {
+        width: 200px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-around;
+        margin: 10px 0 0;
+        height: 55px;
+    }
+
+    .nav-links a {
+        min-width: auto;
+        font-size: 10px;
+    }
+
+    .nav-links .premium {
+        display: none;
+    }
+}
