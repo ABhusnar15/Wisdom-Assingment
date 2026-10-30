@@ -1,0 +1,81 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Times New Roman", serif;
+    margin: 0;
+    padding: 10px;
+}
+
+.container {
+    border: 5px solid #d8dddd;
+    padding: 30px 95px 50px;
+    margin: auto;
+    max-width: 1000px;
+}
+
+h1 {
+    font-size: 55px;
+    margin-top: 15px;
+    margin-bottom: 65px;
+}
+
+p {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+label {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 2px;
+    font-size: 23px;
+}
+
+button {
+    width: 100%;
+    padding: 5px;
+    font-size: 23px;
+    cursor: pointer;
+}
+
+.login {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 28px;
+}
+
+.login a {
+    color: blue;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+
+    p, .login {
+        font-size: 21px;
+    }
+
+    label {
+        font-size: 23px;
+    }
+
+    input, button {
+        font-size: 18px;
+    }
+}
