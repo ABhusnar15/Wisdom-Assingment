@@ -1,0 +1,187 @@
+/* ---------- Base ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f6fa;
+  color: #222;
+  padding: 24px;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.assignment {
+  max-width: 1000px;
+  margin: 0 auto 48px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.assignment h2 {
+  margin-bottom: 16px;
+}
+
+/* ---------- Assignment 1: 3x3 grid, 100px cells, 10px gap ---------- */
+.grid-3x3 {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+}
+
+.b1 { background: #e74c3c; }
+.b2 { background: #e67e22; }
+.b3 { background: #f1c40f; }
+.b4 { background: #2ecc71; }
+.b5 { background: #1abc9c; }
+.b6 { background: #3498db; }
+.b7 { background: #9b59b6; }
+.b8 { background: #34495e; }
+.b9 { background: #fd79a8; }
+
+/* ---------- Assignment 2: Blog layout with named areas + fr units ---------- */
+.blog-layout {
+  display: grid;
+  grid-template-columns: 1fr 3fr;   /* sidebar : main = 1 : 3 */
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+  gap: 10px;
+  min-height: 350px;
+}
+
+.blog-header  { grid-area: header;  background: #2d3436; color: #fff; }
+.blog-sidebar { grid-area: sidebar; background: #dfe6e9; }
+.blog-main    { grid-area: main;    background: #ffeaa7; }
+.blog-footer  { grid-area: footer;  background: #636e72; color: #fff; }
+
+.blog-header,
+.blog-sidebar,
+.blog-main,
+.blog-footer {
+  padding: 20px;
+  border-radius: 4px;
+}
+
+/* On small screens stack everything in one column */
+@media (max-width: 600px) {
+  .blog-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+  }
+}
+
+/* ---------- Assignment 3: Responsive gallery (auto-fit + minmax) ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.gallery img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;   /* crop instead of stretching */
+  border-radius: 6px;
+  display: block;
+}
+
+/* ---------- Assignment 4: Dashboard with grid-template-areas ---------- */
+.dashboard {
+  display: grid;
+  grid-template-columns: 200px 1fr 220px;
+  grid-template-rows: 60px 1fr 50px;
+  grid-template-areas:
+    "header header header"
+    "nav    main   aside"
+    "footer footer footer";
+  gap: 10px;
+  min-height: 400px;
+}
+
+.d-header { grid-area: header; background: #0984e3; color: #fff; }
+.d-nav    { grid-area: nav;    background: #74b9ff; }
+.d-main   { grid-area: main;   background: #dfe6e9; }
+.d-aside  { grid-area: aside;  background: #a29bfe; }
+.d-footer { grid-area: footer; background: #2d3436; color: #fff; }
+
+.d-header,
+.d-nav,
+.d-main,
+.d-aside,
+.d-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+@media (max-width: 700px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
+}
+
+/* ---------- Assignment 5: Cards with implicit grid (auto-fill + minmax) ---------- */
+/* No grid-template-rows: rows are created automatically (implicit grid). */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-auto-rows: auto;
+  gap: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.card h3 {
+  padding: 12px 12px 4px;
+}
+
+.card p {
+  padding: 0 12px 14px;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
